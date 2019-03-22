@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<th:block th:fragment="menu">
+
+	<nav
+		class="navbar navbar-expand-lg navbar-light bg-warning font-weight-bold"
+		style="font-family: 'Muli', sans-serif; font-size: 26px;">
+
+
+		<a class="navbar-brand" href="/"> <img alt=""
+			src="../../img/logo.png" style="height: 60px"> <span
+			class="text text-info font-weight-bold"> CARIS Assurance </span>
+		</a>
+		<div id="h_spacer" style="width: 30px"></div>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown">
+				<a	class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"> Stock </a>
+					<div class="dropdown-menu text-warning" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/stock/commande">Provisionning</a>
+						<a class="dropdown-item" href="/stock/category">Gestion des	categories</a> 
+						<a class="dropdown-item" href="/stock/supplier">Gestion	des Fournisseurs</a>
+					</div>
+				</li>
+			</ul>
+
+
+
+		</div>
+
+	
+
+		<div class="form-inline" style="font-size: 12px">
+			Utilisateur : <span class="text text-info" sec:authentication="name"></span>
+		</div>
+
+
+	</nav>
+	
+	
+	
+
+	
+	
+</th:block>
+
+</html>
+

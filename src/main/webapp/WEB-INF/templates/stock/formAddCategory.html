@@ -1,0 +1,68 @@
+
+
+
+<html 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		xmlns:th="http://www.thymeleaf.org"
+		layout:decorate="~{fragments/layout}">
+  		
+  		<head>
+  			<title>Formulaire Ajout Categorie</title>
+  		</head>
+		
+  		
+    
+  <div layout:fragment="content">
+  
+  			<div id="content" name="content" style="padding: 20px">
+	  			<center><h2> Ajouter une categorie </h2></center>
+	  	
+	  			<div class="text font-weight-bold"><p th:text="${msg}" /></div>
+	  	
+		  		 <form action="#" th:action="@{/stock/category/add}" th:object="${category}" method="POST">
+	                <table class="table bg-light">
+	                    
+	                    <tr>
+	                        <td>Courte Description:</td>
+	                        <td><input type="text" th:field="*{categoryShdes}"></input></td>
+	                    </tr>
+	                    <tr>
+	                        <td  class="text text-warning" colspan="2" th:if="${#fields.hasErrors('categoryShdes')}" th:errors="*{categoryShdes}"></td>
+	                       
+	                    </tr>
+	                    
+	                     <tr>
+	                        <td>Long Description:</td>
+	                        <td><input type="text" th:field="*{categoryDescription}"></input></td>
+	                     </tr>
+	                     <tr>
+	                        <td class="text text-warning" colspan ="2" th:if="${#fields.hasErrors('categoryDescription')}" th:errors="*{categoryDescription}"></td>
+	                    </tr>
+	                                  
+	                    <tr>
+	                        <td>Enabled:</td>
+	                        <td><select th:field="*{isActive}">
+	                          	<option value="true">Enabled</option>
+				  				<option value="false">Disabled</option>
+	                        	</select>
+	                        </td>
+	                     </tr>
+	                     <tr> 
+	                     
+	                        <td class="text text-warning" colspan ="2" th:if="${#fields.hasErrors('isActive')}" th:errors="*{isActive}">isActive</td>
+	                    </tr>
+	                    
+	                   <tr>
+		                   
+		                   <td><input type="submit" value="Submit" /></td> 
+		                   <td><input type="reset" value="Reset" /></td>
+	                   </tr>
+	                </table>   	
+		
+			 	</form>
+  		</div>
+  
+  </div>
+
+
+  
+</html>

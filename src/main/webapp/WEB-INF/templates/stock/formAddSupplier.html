@@ -1,0 +1,74 @@
+
+
+
+<html 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		xmlns:th="http://www.thymeleaf.org"
+		layout:decorate="~{fragments/layout}">
+  		
+  		<head>
+  			<title> Formulaire Ajout Fournisseur de Contrats </title>
+  		</head>
+		
+  		
+    
+  <div layout:fragment="content">
+  			
+  			<div id="content" name="content" style="padding: 20px">
+	  		<center>
+	  			<h2> Ajouter un Fournisseur </h2>
+	  			
+	  		</center>
+	  	
+	  			
+	  	
+		  		 <form action="#" th:action="@{/stock/supplier/add}" th:object="${fournisseur}" method="POST">
+									
+			  		<input type="hidden"  th:field= "*{supplierId}"/>
+	                <table class="table bg-light">
+	                
+	                	
+	                    <tr>
+	                    <td colspan="3">
+	                    <div class="text text-info font-weight-bold"><p th:text="${msg}" /></div>
+	                    </td>
+	                   
+	                    <tr>
+	                        <td>Nom du fournisseur:</td>
+	                        <td><input type="text" th:field="*{supplierName}"></input></td>
+	                        <td><input class="btn btn-success " type="submit" value="Search" name="search"/></td>
+	                    </tr>
+	                    
+	                    <tr>
+	                       <td  class="text text-warning" colspan="3" th:if="${#fields.hasErrors('supplierName')}" th:errors="*{supplierName}">
+	                       </td>
+	                    </tr>
+
+	                    
+	                     <tr>
+	                        <td>Description:</td>
+	                        <td><input type="text" th:field="*{supplierShdes}"></input></td>
+	                        <td>
+	                     </tr>
+	                     <tr>
+	                        <td class="text text-warning" colspan ="3" th:if="${#fields.hasErrors('supplierShdes')}" th:errors="*{supplierShdes}"></td>
+	                    </tr>
+	                                  
+	                    
+	                 
+	                    
+	                   <tr>
+		                   
+		                   <td><input class="button" type="submit" value="Enregistrer" name="save"/></td> 
+		                   <td><input class="button" type="reset" value="Reset" name="reset" /></td>
+		                   <td></td>
+	                   </tr>
+	                </table>   	
+		
+			 	</form>
+  		</div>
+  
+  </div>
+
+
+  
+</html>

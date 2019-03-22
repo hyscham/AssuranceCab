@@ -1,0 +1,63 @@
+
+<!DOCTYPE html >
+
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Car Insurance</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	
+	<th:block th:insert="fragments/header :: head_includes">
+	</th:block>
+
+	
+	<style type="text/css">
+	
+	#content_frag{
+	 			 height: 600px;
+				 background-image: url('../../img/CarInsurance2.png');
+/* 				 background-color: linear-gradient(to bottom, orange, #dddd00 50%, yellow); */
+				 background-repeat: no-repeat;
+				 background-size:contain; 
+				 background-position: center ;
+/* 				 opacity: 0.5; */
+				 background-clip: padding-box;"
+				 
+				 }
+	
+	</style>
+	
+</head>
+
+<body>
+	<div >
+		<div class="row">
+			<div class="col-md-1 bg-light"></div>
+			
+			<div class="col-md-10" style="margin-top: 10px">
+			
+			<th:block th:include="fragments/menu :: menu"></th:block>
+			
+			<div id = "content_frag" name = "content_frag" class="bg-info">
+			
+			<div layout:fragment="content" >
+				Votre assurance
+			</div>
+								
+			</div>
+			
+			</div>
+			
+			
+			<div class="col-md-1 bg-light"></div>
+			
+
+		</div>
+	</div>
+		<th:block th:include="fragments/footer :: footer-scripts"></th:block>
+</body>
+</html>
